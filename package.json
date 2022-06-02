@@ -4,6 +4,7 @@
   "description": "Bringing directory listings into the third dimension",
   "main": "dist/index.js",
   "scripts": {
+    "start": "node dist/index.js",
     "build": "tsc",
     "prepublish": "npm run build",
     "test": "jest"

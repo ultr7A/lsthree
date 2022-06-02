@@ -1,18 +1,24 @@
-import { InputFilter } from "./input-filter";
-import { InputShellCommand } from "./input-shell-command";
-import { OutputParser } from "./output-parse";
+import { InputFilter }          from "./input-filter";
+import { InputShellCommand }    from "./input-shell-command";
+import { OutputParser }         from "./output-parse";
+import { OutputRenderer }       from "./output-render";
 import { OutputRendererCamera } from "./output-renderer-camera";
 
 const args     = process.argv.slice(2);
 const dir_name = process.argv[1];
 
-const fbo = [];
-
 const inputFilter       = new InputFilter();
-const inputShellCommand = new InputShellCommand();
+const inputShellCommand = new InputShellCommand(inputFilter);
 
-const outputParserer       = new OutputParser();
-const outputRendererCamera = new OutputRendererCamera();
+inputShellCommand.exec(args, (standard_out: string) => {
 
-console.log("dir_name: "+dir_name);
-console.log("args:     "+args.join(", "));
+    const outputParser         = new OutputParser();
+    const outputRenderer       = new OutputRenderer(outputParser);
+    const outputRendererCamera = new OutputRendererCamera();
+
+    outputRenderer.blit([]);
+
+    console.log("dir_name: "+dir_name);
+    console.log("args:     "+args.join(", "));
+
+});

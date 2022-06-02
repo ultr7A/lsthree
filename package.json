@@ -1,0 +1,39 @@
+{
+  "name": "lsthree",
+  "version": "1.0.0",
+  "description": "Bringing directory listings into the third dimension",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ultr7a/lsthree.git"
+  },
+  "keywords": [
+    "3d",
+    "directory",
+    "ls",
+    "file",
+    "system",
+    "browser",
+    "meta.gl",
+    "wrapt.org"
+  ],
+  "author": "Jeremy Evans <ultr7a@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ultr7a/lsthree/issues"
+  },
+  "homepage": "https://github.com/ultr7a/lsthree#readme",
+  "dependencies": {
+    "meta.gl": "^0.1.5",
+    "typescript": "^4.7.2",
+    "wrapt.co_re": "^1.1.17"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.38"
+  }
+}
